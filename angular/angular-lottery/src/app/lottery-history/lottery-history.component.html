@@ -1,0 +1,12 @@
+<div class="col-md-6 offset-md-3">
+  <div class="card" *ngIf="isLogin">
+      <div class="card-body">
+          <p class="text-center">
+            lottery-history page works!
+          </p>
+      </div>
+  </div>
+  <div class="alert alert-danger text-center" role="alert" *ngIf="!isLogin">
+      Please Login First!
+  </div>
+</div>

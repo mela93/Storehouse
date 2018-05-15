@@ -1,0 +1,18 @@
+<div class="container">
+	<div class="col-md-6 offset-md-3">
+		<div class="card" *ngIf="!reset">
+			<div class="card-body">
+				<form (ngSubmit)="doReset()">
+					<fieldset class="form-group has-float-label">
+						<input type="email" class="form-control" id="r-email" placeholder="Enter email" autocomplete='email' required>
+						<label for="r-email">Email address</label>
+					</fieldset>
+					<button type="submit" mat-raised-button color="warn" class="btn-block" click>Reset</button>
+				</form>
+			</div>
+		</div>
+		<div class="alert alert-info text-center" role="alert" *ngIf="reset">
+			Reset email sent!
+		</div>
+	</div>
+</div>

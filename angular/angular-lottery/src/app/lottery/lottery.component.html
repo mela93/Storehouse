@@ -1,0 +1,27 @@
+<div class="col-md-6 offset-md-3">
+    <div class="card" *ngIf="isLogin">
+        <div class="card-body" style="text-align: center">
+            <!-- <div *ngIf="!is_done">
+                <div *ngIf="state >= 0">连接服务器...</div>
+                <div *ngIf="state >= 1">预加载资源...</div>
+                <div *ngIf="state >= 2">加载完毕...</div>
+            </div>
+            <button mat-raised-button (click)="openDialog()" *ngIf="!is_done && state >= 2">Pick one</button>
+            <p *ngIf="is_done">
+                今天机会已经用完，请下次再尝试！
+            </p> -->
+            Who is luck?<br />
+            //Debug: this result should get by sever
+            <form ng-form="myForm" (ngSubmit)="submitChoose()">
+                <div *ngFor="let item of list; let i = index;" class="col-md-6" style="display: inline-block;">
+                    <fa [name]="'star'" animation="spin" *ngIf="count_back == 0  && item_result.id == item.id && disabled"></fa>
+                    <mat-checkbox #checkBox id="{{item.id}}" (change)="checkedState($event, checkBox)" [checked]="saveUsername" value="{{item}}" [disabled]="disabled">{{item.value}}</mat-checkbox>
+                </div>
+                <button type="submit" mat-raised-button color="primary">{{disabled?"Today is finish":"Submit"}}</button>
+            </form>
+        </div>
+    </div>
+    <div class="alert alert-danger text-center" role="alert" *ngIf="!isLogin">
+        Please Login First!
+    </div>
+</div>
