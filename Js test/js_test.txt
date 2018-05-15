@@ -1,0 +1,30 @@
+function distancen(point_a, point_b){
+    var x1 =Math.abs(point_a.x-point_b.x);
+    var y2 =Math.abs(point_a.y-point_b.y);
+    var boolean_value=(point_a.x%1==0||point_b.x%1==0||point_b.y%1==0||point_b.x%1==0)&&(x1>=1&&y2>=1);
+    var min_one,min_two
+    if(boolean_value==true||(y2==0||x1==0)){
+        return Math.abs(point_a.x-point_b.x) + Math.abs(point_a.y-point_b.y)
+    } else{
+        if (x1==1&&y2!=0){
+            if (point_b.y%1!=0&&point_a.y%1!=0&&y2<1){
+                var a = point_b.y%1 + point_a.y%1 + 1;
+                var b = 1-point_b.y%1 + 1 - point_a.y%1 + 1;
+                return min_one = Math.min(a,b);
+            } else {}
+        } else if(y2==1&&x1!=0){
+            if (point_b.x%1!=0&&point_a.x%1!=0&&x1<1){
+                var a = point_b.x % 1 + point_a.x % 1 + 1;
+                var b = 1 - point_b.x % 1 + 1 - point_a.x % 1 + 1;
+                return min_two = Math.min(a, b);
+            }else{}
+        }
+        var arr =[min_one,min_two]
+        for (i=0;i<arr.length;i++){
+            if (typeof(arr[i])=="undefined"){
+                arr.splice(i,1)
+            }
+        }
+        return Math.min.apply(null, arr)
+    }
+}

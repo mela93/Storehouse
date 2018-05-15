@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset='utf-8' />
+	<title>canvas</title>
+</head>
+<style type="text/css">
+	canvas{
+		border: 1px solid #660099;
+	}
+</style>
+<body>
+	<canvas id="canvas" width="600" height="600"></canvas>
+</body>
+<script>
+	var canvas = document.getElementById('canvas');
+	var ctx = canvas.getContext('2d');
+	var ball_count = 10;//生成球的个数
+	var running = false;
+	var raf;
+	var point = {};
+
+	// 创建球
+	function ball() {
+		this.x = canvas.width * Math.random();
+		this.y = canvas.height * Math.random();
+		this.radius = 20;
+		this.r = Math.round(Math.random() * 255);
+		this.g = Math.round(Math.random() * 255);
+		this.b = Math.round(Math.random() * 255);
+		this.opacity = 0.7 + Math.random() * 0.3;
+		this.speed = 1 + Math.random() * 5;//小球们的移动速度
+		this.draw = function(){
+			ctx.beginPath();
+			ctx.arc(this.x, this.y, this.radius, Math.PI * 2, false);
+			ctx.closePath();
+			var gradient = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.radius);
+			gradient.addColorStop(0, 'rgba(' + this.r + ',' + this.g + ',' + this.b + ',' + this.opacity + ')');
+			gradient.addColorStop(1, 'rgba(' + this.r + ',' + this.g + ',' + this.b + ',' + 0.1 + ')');
+			ctx.fillStyle = gradient;
+			ctx.fill();
+		}
+	}
+
+	var balls = [];
+	for (var i = 1; i <= ball_count; i++){
+	  balls.push(new ball());
+	}
+
+	function clear(){
+		ctx.fillStyle = '#DCDCDC';
+		ctx.fillRect(0, 0, canvas.width, canvas.height);
+	}
+
+	// 绘图
+	function draw() {
+		clear();
+		for (var i in balls){
+			var item = balls[i];
+			item.draw();
+			// 跟随鼠标移动
+			if (point.x && point.y) {
+				if (Math.abs(point.x - item.x) <= item.speed) {
+					item.x = point.x;
+				}
+				if (Math.abs(point.y - item.y) <= item.speed) {
+					item.y = point.y;
+				}
+				if (point.x < item.x) {
+					item.x -= item.speed;
+				}
+				if (point.x > item.x) {
+					item.x += item.speed;
+				}
+				if (point.y < item.y) {
+					item.y -= item.speed;
+				}
+				if (point.y > item.y) {
+					item.y += item.speed;
+				}
+			}
+		}
+		raf = window.requestAnimationFrame(draw);
+	}
+	
+	// 鼠标移入
+	canvas.addEventListener('mousemove', function(e){
+			point.x = e.clientX;
+			point.y = e.clientY;
+		if (!running) {
+			clear();
+			draw();
+			running = true;
+		}
+	});
+
+	//鼠标移出
+	canvas.addEventListener('mouseout', function(e){
+	  window.cancelAnimationFrame(raf);
+	  running = false;
+	});
+</script>
+</html>
