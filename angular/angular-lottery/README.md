@@ -1,3 +1,10 @@
+# Info
+A project for me to learning and use Angular 6.
+
+All data input is fake, you can type anything and submit.
+
+20% finished.
+
 # Angular-Lottery
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.
