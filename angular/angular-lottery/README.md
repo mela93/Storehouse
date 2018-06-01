@@ -1,5 +1,5 @@
 # Info
-A project for me to learning and use Angular 6.
+A project for me to learn and use Angular 6.
 
 All data input is fake, you can type anything and submit.
 
