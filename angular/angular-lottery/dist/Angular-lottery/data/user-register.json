@@ -1,7 +1,0 @@
-{
-    "id": 1,
-    "username": "admin",
-    "nickName": "ad",
-    "email": "admin@test.com",
-    "token":"fake-jwt-token"
-}
