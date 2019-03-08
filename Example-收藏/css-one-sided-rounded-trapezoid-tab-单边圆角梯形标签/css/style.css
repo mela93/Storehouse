@@ -1,0 +1,18 @@
+.a {
+  position: relative;
+}
+
+.b{
+  height: 100px;
+  width:100px;
+  border:1px solid;
+  background: #e5e5e5;
+  border-radius: 15px 15px 0 0;
+  transform: perspective(10px) rotateX(2deg);
+  transform-origin: bottom left;
+}
+
+.c{
+  position: absolute;
+  top:50px;
+}
