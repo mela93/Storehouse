@@ -2,7 +2,7 @@
 
 ## Description
 
-- Fun css, js code projects or code snippets on the web.
+- html, css, svg, canvas code projects (code snippets) on the web.
 - Interesting content collection
 
 ---
@@ -11,5 +11,5 @@
 
 ## 描述
 
-- 网上有趣好玩的 css，js 代码项目 or 代码片段 收集。
-- 有趣的内容收集
+- 网上的html, css, svg, canvas 代码项目(代码片段)收集。
+- 有趣, 好玩的内容收集.
