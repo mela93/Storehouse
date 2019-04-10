@@ -63,6 +63,12 @@ pip install django
 
 Nginx `brew install nginx`
 
+Go
+```
+wget https://dl.google.com/go/go1.12.3.darwin-amd64.pkg
+tar -C /usr/local -xzf go1.4.linux-amd64.tar.gz
+export PATH=$PATH:/usr/local/go/bin
+```
 app package list (suggestion)
 ```
 Chrome
