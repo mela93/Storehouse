@@ -86,6 +86,7 @@ Cocos Creator
 Android Studio
 微信开发者工具
 Charles
+Postman
 App Cleaner
 Unity
 钉钉
