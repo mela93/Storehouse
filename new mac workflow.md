@@ -1,3 +1,7 @@
+mac打开任意来源安装软件: `sudo spctl --master-disable`
+
+/usr/local 权限: `sudo chown -R $(whoami) /usr/local`
+
 brew: `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
 ```
 brew install git
@@ -11,6 +15,7 @@ echo 'export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
 source ~/.zshrc
 cd "$(brew --repo)/Library/Taps/homebrew/homebrew-core"
 git remote set-url origin https://mirrors.ustc.edu.cn/homebrew-core.git
+brew cask
 cd "$(brew --repo)"/Library/Taps/homebrew/homebrew-cask
 git remote set-url origin https://mirrors.ustc.edu.cn/homebrew-cask.git
 ```
@@ -36,8 +41,6 @@ export PATH="~/mongodb-osx-x86_64-enterprise-4.0.5/bin:$PATH"
 export PATH="$PATH:/Users/ming/development/flutter/bin"
 export PATH=$PATH:/usr/local/go/bin
 alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
-
-export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles
 ```
 
 node
@@ -85,14 +88,22 @@ Android Studio
 Charles
 App Cleaner
 Unity
+钉钉
+QQ
 ```
 
 Appstore (suggestion)
 ```
 Xcode
-钉钉
 The Unarchriver
 Wechat
-QQ
 Reeder 3
+```
+
+vscode setting
+```
+{
+    FontSize: 18
+    FontFamily: Monaco, Consolas , Menlo, 'Courier New', monospace
+}
 ```
