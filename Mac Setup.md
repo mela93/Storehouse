@@ -1,13 +1,16 @@
-mac打开任意来源安装软件: `sudo spctl --master-disable`
+## mac打开任意来源安装软件: 
+`sudo spctl --master-disable`
 
-/usr/local 权限: `sudo chown -R $(whoami) /usr/local`
+## /usr/local 权限: 
+`sudo chown -R $(whoami) /usr/local`
 
-brew: `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
+## brew: 
+`/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
 ```
 brew install git
 brew install wget
 ```
-brew change to USTC Mirror
+### brew change to USTC Mirror
 ```
 cd "$(brew --repo)"
 git remote set-url origin https://mirrors.ustc.edu.cn/brew.git
@@ -19,11 +22,13 @@ brew cask
 cd "$(brew --repo)"/Library/Taps/homebrew/homebrew-cask
 git remote set-url origin https://mirrors.ustc.edu.cn/homebrew-cask.git
 ```
-oh-my-zsh: `sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"`
+## oh-my-zsh: 
+`sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"`
 
-zsh-autosuggestions: `git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions`
+### zsh-autosuggestions: 
+`git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions`
 
-~/.zshrc
+### ~/.zshrc
 ```
 ZSH_THEME="ys"
 plugins=(git zsh-autosuggestions)
@@ -31,7 +36,7 @@ plugins=(git zsh-autosuggestions)
 source ~/.bash_profile
 ```
 
-~/.bash_profile
+### ~/.bash_profile
 ```
 ANDROID_HOME=/Users/ming/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/tools
@@ -43,36 +48,37 @@ export PATH=$PATH:/usr/local/go/bin
 alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 ```
 
-node
+## node
 ```
 npm install -g n
 npm install -g @angular/cli
 npm install -g ionic
 ```
 
-python
+## python
 ```
 brew install python3
 sudo easy_install pip
 pip3 install virtualenv
 ```
 
-Django
+## Django
 ```
 virtualenv --no-site-packages env
 source ./env/bin/activate
 pip install django
 ```
 
-Nginx `brew install nginx`
+## Nginx 
+`brew install nginx`
 
-Go
+## Go
 ```
 wget https://dl.google.com/go/go1.12.3.darwin-amd64.pkg
 tar -C /usr/local -xzf go1.4.linux-amd64.tar.gz
 export PATH=$PATH:/usr/local/go/bin
 ```
-app package list (suggestion)
+## app package list (suggestion)
 ```
 Chrome
 V2RayX
@@ -93,7 +99,7 @@ Unity
 QQ
 ```
 
-Appstore (suggestion)
+## Appstore (suggestion)
 ```
 Xcode
 The Unarchriver
@@ -101,7 +107,7 @@ Wechat
 Reeder 3
 ```
 
-vscode setting
+## vscode setting
 ```
 {
     FontSize: 18
