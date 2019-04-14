@@ -22,6 +22,9 @@ brew cask
 cd "$(brew --repo)"/Library/Taps/homebrew/homebrew-cask
 git remote set-url origin https://mirrors.ustc.edu.cn/homebrew-cask.git
 ```
+## V2Ray
+`brew cask install v2rayx`
+
 ## oh-my-zsh: 
 `sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"`
 
