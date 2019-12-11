@@ -1,0 +1,12 @@
+git cz
+npm install -g commitizen
+commitizen init cz-conventional-changelog --save --save-exact
+if no package.json run npm init --yes
+
+add fontawesome 5
+npm i --save @fortawesome/fontawesome-svg-core
+npm i --save @fortawesome/free-solid-svg-icons
+npm i --save @fortawesome/angular-fontawesome
+
+add font-awesome4.7
+npm install --save font-awesome
