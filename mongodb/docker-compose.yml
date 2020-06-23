@@ -1,0 +1,52 @@
+version: '3.3'
+
+services:
+  mongo:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: MongoDB1234!
+    ports:
+      - 27017:27017
+    volumes:
+      - ./MongoDB:/data/db
+    networks:
+      - mongo-compose-network
+
+  adminmongo:
+    image: mrvautin/adminmongo
+    ports:
+      - 8052:1234
+    restart: always
+    links:
+      - mongo
+    environment:
+      HOST: 0.0.0.0
+      CONN_NAME: 'mongodb'
+      DB_USERNAME: root
+      DB_PASSWORD: MongoDB1234!
+      # DB_HOST: 'mongo'
+      # DB_PORT: 27017
+    networks:
+      - mongo-compose-network
+
+  mongo-express:
+    image: mongo-express
+    ports:
+      - 8051:8081
+    restart: always
+    environment:
+      ME_CONFIG_BASICAUTH_USERNAME: renatogroffe
+      ME_CONFIG_BASICAUTH_PASSWORD: MongoExpress1234!
+      ME_CONFIG_MONGODB_PORT: 27017
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: MongoDB1234!
+    links:
+      - mongo
+    networks:
+      - mongo-compose-network
+
+networks: 
+    mongo-compose-network:
+      driver: bridge
